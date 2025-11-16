@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legendary Parakeet — Parakeet Playground</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Legendary Parakeet</h1>
+    <p class="tag">Play • Post • Parakeet</p>
+    <nav style="margin-top:8px;display:flex;gap:12px;align-items:center">
+      <a href="/leaderboard.html">Leaderboard</a>
+      <a href="/chats.html">Public Chats</a>
+    </nav>
+    <div id="auth" class="auth">
+      <div id="loggedOut">
+        <input id="inpUser" placeholder="username" />
+        <input id="inpPass" type="password" placeholder="password" />
+        <button id="btnLogin">Login</button>
+        <button id="btnRegister">Register</button>
+      </div>
+      <div id="loggedIn" style="display:none">
+        <span id="who"></span>
+        <button id="btnLogout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="game-card">
+      <div class="game-header">
+        <h2>Flappy Parakeet</h2>
+        <div class="scoreboard">Score: <span id="score">0</span> • High: <span id="highscore">0</span></div>
+      </div>
+      <canvas id="game" width="640" height="480"></canvas>
+      <div class="controls">Press <strong>Space</strong> to flap — Click canvas to flap</div>
+      <div class="game-footer">
+        <button id="restart">Restart</button>
+      </div>
+    </section>
+
+    <aside class="social-card">
+      <div class="leaderboard" id="leaderboard">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>Global Highscore</strong>
+          <div style="display:flex;gap:8px">
+            <button id="refreshLeader">Refresh</button>
+            <button id="clearLeaderboard">Clear Scores</button>
+          </div>
+        </div>
+        <div id="globalHigh" style="margin-top:8px;font-size:18px;color:#2f6673">—</div>
+        <div style="margin-top:8px;font-size:13px;color:#356" id="leaderWrap">
+          <div style="font-weight:600;margin-bottom:6px">Top Players</div>
+          <div id="leaderList"></div>
+        </div>
+      </div>
+      <h2>Parakeet Feed</h2>
+      <form id="postForm">
+        <textarea id="postText" placeholder="What's chirping?" maxlength="280"></textarea>
+        <div class="post-actions">
+          <button type="submit">Post</button>
+          <span class="small">Saved locally in your browser</span>
+        </div>
+      </form>
+      <div id="feed" class="feed"></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>Built by Legendary Parakeet — demo static app</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+nohup: ignoring input
+SQLite DB unavailable, falling back to JSON-backed leaderboard Cannot find module 'better-sqlite3'
+Require stack:
+- /workspaces/legendary-parakeet/server/db.js
+- /workspaces/legendary-parakeet/server/server.js
+Legendary Parakeet server running on http://localhost:3000

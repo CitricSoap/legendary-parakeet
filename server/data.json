@@ -1,0 +1,46 @@
+{
+  "posts": [],
+  "highscore": 555,
+  "users": [
+    {
+      "id": 1763288469734,
+      "username": "alice",
+      "salt": "5c5c046d99f2ec59205f4d58882e39a3",
+      "hash": "bb8ec98e63824dae1ea71b253d59e5d3e9e2fe5fb2ff74f2e976ad166d587dceff3969aaa2344888a412ffe95d0a5a3d75053af77b4f2c2612ade905dbd42187"
+    },
+    {
+      "id": 1763288471144,
+      "username": "bob",
+      "salt": "1f9910b2b25194735495e71a31f72028",
+      "hash": "1364eb5d775392058fb339987f035ef45899724ab6ef57583b38de6a3a876e556011616807439dce7355701ea0b9e9f5c9e1c74af4597333b2b3770ba722c637"
+    }
+  ],
+  "tokens": {
+    "7cd7a845a31bc3211e769e857037557f7df5f19db16fd01d": 1763288469734,
+    "b9e1ad1d120b6c34ad290140c5bc473a747f178519cf2378": 1763288471144,
+    "3595c4b83afdc8be8106079003fa0beaf9c86e8983f47a05": 1763288469734,
+    "ef4f5bbf1c9db6fccb5fa195c3793de2cfd9b5bc9e9f285d": 1763288471144,
+    "69e67df24b650fd00414a478fe1cd97b22e35764f1ba9974": 1763288469734,
+    "b2f7fb2a0adbdff1dcf371bc818b0d9a0b4fa2e954283497": 1763288471144
+  },
+  "chats": [
+    {
+      "id": 1763291852395,
+      "text": "Hello from curl after restart",
+      "t": 1763291852395,
+      "username": "anonymous"
+    },
+    {
+      "id": 1763291906219,
+      "text": "Hello from curl after restart",
+      "t": 1763291906219,
+      "username": "anonymous"
+    },
+    {
+      "id": 1763307967010,
+      "text": "Automated test chat from assistant",
+      "t": 1763307967010,
+      "username": "anonymous"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Public Chats — Legendary Parakeet</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Legendary Parakeet — Public Chats</h1>
+    <a href="/">Back to App</a>
+  </header>
+  <main style="max-width:900px;margin:20px auto;padding:16px">
+    <section class="social-card">
+      <h2>Public Chat (visible to everyone)</h2>
+      <form id="chatForm">
+        <textarea id="chatText" placeholder="Say something public..." maxlength="500"></textarea>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div>
+            <button id="send">Send</button>
+            <button id="clearLocal" type="button">Clear Local</button>
+          </div>
+          <small>Public and permanent (demo)</small>
+        </div>
+      </form>
+      <div id="chatFeed" class="feed" style="margin-top:12px;max-height:600px;overflow:auto"></div>
+    </section>
+  </main>
+  <script>
+    const feed = document.getElementById('chatFeed');
+    const form = document.getElementById('chatForm');
+    const text = document.getElementById('chatText');
+
+    function esc(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+
+    async function fetchChats(){
+      try{
+        const res = await fetch('/api/chats');
+        if(!res.ok) return;
+        const arr = await res.json();
+        feed.innerHTML = '';
+        arr.slice().reverse().forEach(m=>{
+          const el = document.createElement('div'); el.className='post';
+          el.innerHTML = `<div class="meta"><span>${new Date(m.t).toLocaleString()}</span><span>${m.username||'anon'}</span></div><div class="body">${esc(m.text)}</div>`;
+          feed.appendChild(el);
+        });
+      }catch(e){}
+    }
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault(); const v = (text.value||'').trim(); if(!v) return; try{
+        const res = await fetch('/api/chats', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ text: v }) });
+        if(res.ok){ text.value=''; fetchChats(); } else { const j = await res.json(); alert(j.error||'failed'); }
+      }catch(e){ alert('failed to send'); }
+    });
+
+    document.getElementById('clearLocal').addEventListener('click', ()=>{ text.value=''; });
+
+    fetchChats();
+    setInterval(fetchChats, 5000);
+  </script>
+</body>
+</html>

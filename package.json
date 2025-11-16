@@ -1,0 +1,16 @@
+{
+  "name": "legendary-parakeet",
+  "version": "0.1.0",
+  "description": "Legendary Parakeet demo app (game + social feed)",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": [],
+  "author": "CitricSoap",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

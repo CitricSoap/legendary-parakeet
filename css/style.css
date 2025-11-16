@@ -1,0 +1,33 @@
+*{box-sizing:border-box}body{font-family:Inter,Segoe UI,Roboto,system-ui,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#e8f7ff,#fefefe);color:#0b2b3a;min-height:100vh;display:flex;flex-direction:column}header.site-header{padding:20px 24px;background:rgba(8,30,40,0.05);border-bottom:1px solid rgba(8,30,40,0.05)}header h1{margin:0;font-size:1.4rem}header .tag{margin:4px 0 0;color:#3b6b7b;font-size:.9rem}
+.container{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:20px;align-items:start;max-width:1100px;margin:20px auto;width:calc(100% - 40px)}
+.game-card,.social-card{background:white;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(8,30,40,0.06)}
+.game-card canvas{display:block;width:100%;height:auto;border-radius:8px;background:linear-gradient(#87CEEB,#a6f0ff)}
+.game-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.controls{margin-top:8px;color:#2f6673}
+.game-footer{margin-top:10px}
+#restart{padding:8px 12px;border-radius:6px;border:0;background:#67c6a5;color:white;cursor:pointer}
+
+.social-card h2{margin-top:0}
+#postForm textarea{width:100%;height:72px;padding:8px;border-radius:8px;border:1px solid #e6f0f2;resize:none;font-size:14px}
+.post-actions{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.post-actions button{background:#2f8f9b;color:white;padding:8px 12px;border:0;border-radius:6px;cursor:pointer}
+.feed{margin-top:12px;display:flex;flex-direction:column;gap:10px;max-height:520px;overflow:auto;padding-right:6px}
+.post{padding:10px;border-radius:8px;border:1px solid #eef6f7;background:linear-gradient(180deg,#fff,#f8ffff)}
+.post .meta{display:flex;justify-content:space-between;color:#4e6b70;font-size:12px;margin-bottom:6px}
+.post .body{white-space:pre-wrap}
+.post .actions{margin-top:8px;display:flex;gap:8px}
+.post .actions button{background:transparent;border:0;color:#2f6673;cursor:pointer}
+small{color:#5a7478}
+
+.site-footer{padding:12px;text-align:center;color:#35555f}
+
+/* auth */
+.auth{margin-top:8px;display:flex;gap:8px;align-items:center}
+.auth input{padding:6px 8px;border-radius:6px;border:1px solid #e6f0f2}
+.auth button{padding:6px 8px;border-radius:6px;border:0;background:#3aa29a;color:white;cursor:pointer}
+
+@media(max-width:880px){.container{grid-template-columns:1fr;width:calc(100% - 24px)}.social-card{order:-1}}
+
+/* leaderboard */
+.leaderboard{background:linear-gradient(180deg,#f8fffb,#fff);padding:10px;border-radius:8px;border:1px solid #e6f8f2;margin-bottom:12px}
+.leaderboard button{background:#2f8f9b;color:white;border:0;padding:6px 8px;border-radius:6px;cursor:pointer}
