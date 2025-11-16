@@ -2,9 +2,6 @@ app = "legendary-parakeet"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
-[build]
-  image = "legendary-parakeet"
-
 [env]
   PORT = "3000"
 
